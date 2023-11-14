@@ -5,12 +5,14 @@ import com.linecorp.armeria.client.WebClient
 import com.linecorp.armeria.common.{HttpMethod, HttpRequest, HttpStatus, MediaType}
 import munit.FunSuite
 
+import scala.util.Try
+
 class SingUpSuite extends FunSuite:
 
   /*
    * HINT: Use the `addService` method
    */
-  val server: Server = Server(8080).addServices(JumpStartDay1Controller)
+  val server: Server = Server(8081).addServices(JumpStartDay1Controller)
 
   val webClient: WebClient = WebClient.of("http://localhost:8080")
 
@@ -44,4 +46,4 @@ class SingUpSuite extends FunSuite:
 
   override def beforeAll(): Unit = server.start()
 
-  override def afterAll(): Unit = server.stop()
+  override def afterAll(): Unit = Try(server.stop())

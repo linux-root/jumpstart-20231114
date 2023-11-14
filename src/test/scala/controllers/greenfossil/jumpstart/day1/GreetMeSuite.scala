@@ -5,6 +5,8 @@ import com.linecorp.armeria.client.WebClient
 import com.linecorp.armeria.common.{HttpStatus, QueryParams}
 import munit.FunSuite
 
+import scala.util.Try
+
 class GreetMeSuite extends FunSuite:
 
   /*
@@ -33,4 +35,4 @@ class GreetMeSuite extends FunSuite:
 
   override def beforeAll(): Unit = server.start()
 
-  override def afterAll(): Unit = server.stop()
+  override def afterAll(): Unit = Try(server.stop())
