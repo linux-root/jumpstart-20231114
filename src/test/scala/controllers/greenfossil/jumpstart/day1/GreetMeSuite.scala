@@ -32,3 +32,5 @@ class GreetMeSuite extends FunSuite:
     assertNoDiff(response.contentUtf8(), "Hello stranger!")
 
   override def beforeAll(): Unit = server.start()
+
+  override def afterAll(): Unit = server.stop()
