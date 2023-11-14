@@ -10,7 +10,7 @@ class SingUpSuite extends FunSuite:
   /*
    * HINT: Use the `addService` method
    */
-  val server: Server = Server(8080).addServices(JumpStartDay1Controller)
+  val server: Server = Server(8081).addServices(JumpStartDay1Controller)
 
   val webClient: WebClient = WebClient.of("http://localhost:8080")
 
@@ -43,5 +43,3 @@ class SingUpSuite extends FunSuite:
     assertNoDiff(response.contentUtf8(), "Welcome Homer ! You were born on 01/05/1990.")
 
   override def beforeAll(): Unit = server.start()
-
-  override def afterAll(): Unit = server.stop()
