@@ -1,6 +1,8 @@
 package controllers.greenfossil.jumpstart.day1
 
 import com.greenfossil.data.mapping.Mapping
+import com.greenfossil.data.mapping.Mapping.*
+import com.greenfossil.thorium.{*, given}
 import com.linecorp.armeria.server.annotation.{Get, Param, Post}
 
 object JumpStartDay1Controller:
